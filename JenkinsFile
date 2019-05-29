@@ -1,0 +1,21 @@
+pipeline{
+		agent any
+		
+			stages
+			{
+				stage ( 'build' )
+				{
+					steps
+					{
+						git 'https://github.com/ankushpatil601/hello-world.git'
+						sh 'mvn clean package'
+					}
+				}
+				
+				stage ('deploy')
+				{
+				   echo "You are in deployment stage now"
+				}
+			}
+
+}
